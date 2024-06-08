@@ -139,7 +139,7 @@ def handle_remove_password(id: int, storage: str):
 
 if __name__ == '__main__':
     if platform != "linux":
-        printer.error("This program works only on linux")
+        printer.error("This program works only on linux systems")
         exit()
     try:
         cli.add_command(handle_generate_key)
