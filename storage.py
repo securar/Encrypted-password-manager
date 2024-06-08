@@ -5,10 +5,8 @@ from hashlib import sha512
 
 
 def create_storage(storage_path: str, key: bytes):
-    try:
+    if not os.path.exists(storage_path):
         os.mkdir(storage_path)
-    except FileExistsError:
-        pass
 
     with open(file=os.path.join(storage_path, "key"), mode="wb") as file:
         file.write(sha512(key).digest())
