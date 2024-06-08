@@ -15,7 +15,6 @@ def create_storage(storage_path: str, key: bytes):
 
     storage = sqlite3.connect(database=os.path.join(storage_path, "storage"))
     cursor = storage.cursor()
-    storage.autocommit = True
     cursor.execute(
         """
         CREATE TABLE passwords (
